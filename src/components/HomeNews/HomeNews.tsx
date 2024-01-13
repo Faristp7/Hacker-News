@@ -1,14 +1,17 @@
 import { tailspin } from 'ldrs'
 import React, { useState } from 'react'
 import { fetchStoryDetails, fetchTopStories } from '../../services/hackerNewsApi'
+import { useNavigate } from 'react-router-dom'
 
 tailspin.register()
 
 export default function HomeNews() {
+    const navigate = useNavigate()
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [topStories, setTopStories] = useState<any>([])
     const [loading, setLoading] = useState<boolean>(true)
-    const [page, setpages] = useState<number>(20)
+    const [page, setpages] = useState<number>(25)
 
     React.useEffect(() => {
         (async () => {
@@ -22,7 +25,7 @@ export default function HomeNews() {
             setLoading(false)
         })()
     }, [page])
-
+    console.log(topStories);
 
     return (
         <div className="py-3 px-1 mt-10 dark:bg-black h-screen overflow-y-scroll">
@@ -45,7 +48,7 @@ export default function HomeNews() {
                                 </p>
                                 <p className='truncate font-thin text-sm dark:text-gray-500'>{story.url}</p>
                             </a>
-                            <div className='dark:bg-gray-900 p-2 px-5 w-10 flex flex-col justify-between items-center relative '>
+                            <div className='dark:bg-gray-900 p-2 px-5 w-10 flex cursor-pointer  flex-col justify-between items-center relative' onClick={() => navigate('./')}>
                                 <div className='flex justify-center text-orange-500 text-sm'>
                                     {story.descendants}
                                     <img className='absolute top-1 opacity-30 w-6 h-6' src="https://img.icons8.com/metro/26/b36537/speech-bubble.png" alt="speech-bubble" />

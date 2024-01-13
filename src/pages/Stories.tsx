@@ -1,5 +1,5 @@
 import NavBar from "../components/StorieNavbar/NavBar";
-import Comment from "../components/commentSection/comment";
+import Comment from "../components/commentSection/Comment";
 
 export default function Stories() {
   return (
