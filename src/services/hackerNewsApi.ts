@@ -22,3 +22,4 @@ export async function fetchStoryDetails(storyId : number){
         throw error
     }
 }
+

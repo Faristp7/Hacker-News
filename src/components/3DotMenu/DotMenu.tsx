@@ -20,7 +20,7 @@ export default function DotMenu() {
     }
 
     return (
-        <div className="col-start-2 rounded-b bg-orange-600">
+        <div className="col-start-2 rounded-b bg-orange-600 absolute right-0 top-10">
             {menuItems.map((item, index) => (
                 <div key={index} className="flex flex-col gap-1">
                     <div className="p-2 flex gap-3 cursor-pointer hover:bg-orange-700" onClick={item.text === 'Toggle Night Theme' ? handleToggleNightMode : undefined}>

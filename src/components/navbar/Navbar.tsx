@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='bg-orange-500 p-1'>
+            <div className='bg-orange-500 p-1 fixed z-20 w-full sm:w-[33.4%]'>
                 <div className='flex justify-between'>
                     <div className='flex justify-between'>
                         <img src={menu} alt="menu" className='w-6 h-6 cursor-pointer mt-1' />
@@ -33,7 +33,7 @@ export default function Navbar() {
             }
             {
                 openMenu &&
-                <div className='grid grid-cols-2 z-10 absolute right-0 sm:relative sm:right-auto'>
+                <div className='grid grid-cols-2 z-10 relative right-0 sm:relative sm:right-auto'>
                     <DotMenu />
                 </div>
             }

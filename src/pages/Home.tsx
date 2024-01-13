@@ -5,7 +5,7 @@ export default function Home() {
   document.title = 'Home'
   return (
     <>
-      <div>
+      <div className="relative">
         <Navbar />
       </div>
 
