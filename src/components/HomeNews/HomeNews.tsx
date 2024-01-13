@@ -24,7 +24,7 @@ export default function HomeNews() {
     }, [page])
 
     return (
-        <div className="py-1 mt-10 dark:bg-black">
+        <div className="py-2 px-1 mt-10 dark:bg-black">
             {loading ? (
                 <l-tailspin
                     size="30"
