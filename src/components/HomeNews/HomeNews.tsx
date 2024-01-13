@@ -23,8 +23,9 @@ export default function HomeNews() {
         })()
     }, [page])
 
+
     return (
-        <div className="py-2 px-1 mt-10 dark:bg-black">
+        <div className="py-3 px-1 mt-10 dark:bg-black h-screen overflow-y-scroll">
             {loading ? (
                 <l-tailspin
                     size="30"
@@ -44,12 +45,12 @@ export default function HomeNews() {
                                 </p>
                                 <p className='truncate font-thin text-sm dark:text-gray-500'>{story.url}</p>
                             </a>
-                            <div className='dark:bg-gray-900 p-1 px-2 flex flex-col justify-between items-center relative '>
+                            <div className='dark:bg-gray-900 p-2 px-5 w-10 flex flex-col justify-between items-center relative '>
                                 <div className='flex justify-center text-orange-500 text-sm'>
-                                    16
+                                    {story.descendants}
                                     <img className='absolute top-1 opacity-30 w-6 h-6' src="https://img.icons8.com/metro/26/b36537/speech-bubble.png" alt="speech-bubble" />
                                 </div>
-                                <div className='text-sm'>118</div>
+                                <div className='text-sm'>{story.score}</div>
                             </div>
                         </div>
                         <hr className='opacity-45 border-gray-600' />

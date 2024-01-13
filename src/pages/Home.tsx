@@ -9,7 +9,7 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <div>
+      <div >
         <HomeNews />
       </div>
     </>

@@ -4,12 +4,12 @@ import Stories from './pages/Stories'
 
 function App() {
   return (
-    <div className='bg-white min-h-screen dark:bg-black dark:text-white'>
+    <div className='bg-white h-screen dark:bg-black dark:text-white overflow-y-hidden'>
       <div className='grid grid-cols-1 sm:grid-cols-3 w-full z-10'>
-        <div className=''>
+        <div className=' h-full'>
           <Home />
         </div>
-        <div className=''>
+        <div className='col-span-2 '>
           <Stories />
         </div>
       </div>
