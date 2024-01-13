@@ -9,7 +9,7 @@ function App() {
         <div className='col-span-1'>
           <Home />
         </div>
-        <div className='col-span-2'>
+        <div className='col-span-2 flex-1'>
           <Stories />
         </div>
       </div>
