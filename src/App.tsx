@@ -1,11 +1,19 @@
 import './App.css'
+import Home from './pages/Home'
+import Stories from './pages/Stories'
 
 function App() {
-
   return (
-    <>
-      <p className='text-center text-red-700 font-bold text-5xl uppercase'>This is test</p>
-    </>
+    <div className='bg-white min-h-screen dark:bg-black dark:text-white'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 fixed w-full z-10'>
+        <div className='col-span-1'>
+          <Home />
+        </div>
+        <div className='col-span-2'>
+          <Stories />
+        </div>
+      </div>
+    </div>
   )
 }
 
