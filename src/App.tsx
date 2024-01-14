@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
-import Comment from './components/commentSection/Comment';
+import MobileComment from './components/mobileComment/MobileComment';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/stories" element={<Stories />} />
-            <Route path='/comment' element={<Comment />} />
+            <Route path='/MobileComment' element={<MobileComment />} />
           </Routes>
         </div>
         <div className='col-span-2'>

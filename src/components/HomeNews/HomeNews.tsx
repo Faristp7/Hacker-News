@@ -1,13 +1,10 @@
 import { tailspin } from 'ldrs'
 import React, { useState } from 'react'
 import { fetchStoryDetails, fetchTopStories } from '../../services/hackerNewsApi'
-import { useNavigate } from 'react-router-dom'
 import '../../App.css'
-
 tailspin.register()
 
 export default function HomeNews() {
-    const navigate = useNavigate()
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [topStories, setTopStories] = useState<any>([])
@@ -40,7 +37,7 @@ export default function HomeNews() {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 topStories.map((story: any, index: number) => (
                     <React.Fragment key={index}>
-                        <div className='flex gap-8 justify-between mb-0.5  border-orange-600 active:border-l-2' key={index}>
+                        <div className='flex gap-8 justify-between mb-0.5 border-orange-600 active:border-l-2' key={index}>
                             <a className='cursor-pointer overflow-hidden' href={story.url} target='_blank'>
                                 <h2>{story.title}</h2>
                                 <p className='font-thin text-sm dark:text-gray-500'>
@@ -48,7 +45,7 @@ export default function HomeNews() {
                                 </p>
                                 <p className='truncate font-thin text-sm dark:text-gray-500'>{story.url}</p>
                             </a>
-                            <div className='dark:bg-gray-900 p-2 px-5 w-10 flex cursor-pointer flex-col justify-between items-center relative' onClick={() => navigate(`./comment/${story.id}`)}>
+                            <div className='dark:bg-gray-900 p-2 px-5 w-10 flex cursor-pointer flex-col justify-between items-center relative'>
                                 <div className='flex justify-center text-orange-500 text-sm'>
                                     {story.descendants}
                                     <img className='absolute top-2 opacity-30 w-6 h-6' src="https://img.icons8.com/metro/26/b36537/speech-bubble.png" alt="speech-bubble" />
