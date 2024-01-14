@@ -2,8 +2,10 @@ import { useState } from 'react'
 import menu from '../../assets/hamburger-menu.png'
 import DotMenu from '../3DotMenu/DotMenu'
 import SearchBox from '../search/SearchBox'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
+    const navigate = useNavigate()
     const [openMenu, setOpenMenu] = useState<boolean>(false)
     const [openSearchBox, setOpenSearchBox] = useState<boolean>(false)
 
@@ -12,7 +14,7 @@ export default function Navbar() {
             <div className='bg-orange-800 p-1 fixed z-30 w-full sm:w-[33.4%]'>
                 <div className='flex justify-between'>
                     <div className='flex justify-between'>
-                        <img src={menu} alt="menu" className='w-6 h-6 cursor-pointer mt-1' />
+                        <img src={menu} alt="menu" className='w-6 h-6 cursor-pointer mt-1' onClick={() => navigate('/options')} />
                         <div className='ml-2.5' style={{ lineHeight: '1' }}>
                             <h6 className='m-0 text-white'>Hacker News</h6>
                             <p className='text-sm font-thin m-0 text-white'>Frontpage</p>

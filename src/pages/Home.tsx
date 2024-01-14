@@ -1,5 +1,6 @@
 import HomeNews from "../components/HomeNews/HomeNews"
 import Navbar from "../components/navbar/Navbar"
+import SideBar from "../components/sideBar/SideBar"
 
 export default function Home() {
   document.title = 'Home'
@@ -11,6 +12,10 @@ export default function Home() {
 
       <div >
         <HomeNews />
+      </div>
+
+      <div>
+        <SideBar/>
       </div>
     </>
   )

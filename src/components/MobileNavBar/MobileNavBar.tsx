@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function MobileNavBar() {
     const navigate = useNavigate()
+    
     return (
         <div className="fixed bg-orange-800 w-full z-30 block sm:hidden">
             <div className="flex justify-between align-middle items-center">

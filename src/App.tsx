@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import Comment from './components/commentSection/Comment';
 import Stories from './pages/Stories';
+import SideBar from './components/sideBar/SideBar';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/stories" element={<Stories />} />
             <Route path='/comment' element={<Comment />} />
+            <Route path='/options' element={<SideBar />} />
           </Routes>
         </div>
         <div className='col-span-2'>
