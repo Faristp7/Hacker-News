@@ -1,21 +1,28 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DataState {
-  data: string | null;
+  data: number | null;
+  kids: number[] | null;
 }
 
 const initialState: DataState = {
   data: null,
+  kids: null,
 };
 
 export const dataSlice = createSlice({
-  name: 'data',
+  name: "data",
   initialState,
   reducers: {
-    setData: (state, action: PayloadAction<string>) => {
+    setData: (state, action: PayloadAction<number>) => {
       state.data = action.payload;
+    },
+    setKids: (state, action: PayloadAction<number[]>) => {      
+      console.log(action.payload);
+      
+      state.kids = action.payload;
     },
   },
 });
 
-export const { setData } = dataSlice.actions;
+export const { setData, setKids } = dataSlice.actions;

@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='bg-orange-500 p-1 fixed z-30 w-full sm:w-[33.4%]'>
+            <div className='bg-orange-800 p-1 fixed z-30 w-full sm:w-[33.4%]'>
                 <div className='flex justify-between'>
                     <div className='flex justify-between'>
                         <img src={menu} alt="menu" className='w-6 h-6 cursor-pointer mt-1' />
