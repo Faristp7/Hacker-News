@@ -6,6 +6,7 @@ import Banner from '../InfoBannerComment/Banner'
 import NavigationBar from '../KeyboardNavigationBar/NavigationBar'
 import DOMPurify from 'dompurify'
 import { tailspin } from 'ldrs'
+import MobileNavBar from '../MobileNavBar/MobileNavBar'
 
 tailspin.register()
 
@@ -31,6 +32,8 @@ export default function Comment() {
 
   return (
     <div className="h-screen overflow-y-auto">
+      <MobileNavBar />
+      <div className='pt-10 block sm:hidden'></div>
       {
         loading ? (
           <div className='flex justify-center h-screen items-center align-middle'>
@@ -49,6 +52,7 @@ export default function Comment() {
               </div>
             ) : (
               <div>
+
                 <Banner bannerInfo={commentIds} />
                 {comments.map((comment) => (
                   <div key={comment.id} className='pl-2 py-2'>
@@ -77,7 +81,9 @@ export default function Comment() {
       }
       {
         comments && commentIds &&
-        <NavigationBar />
+        <div className='hidden sm:block'>
+          <NavigationBar />
+        </div>
       }
     </div>
   )
