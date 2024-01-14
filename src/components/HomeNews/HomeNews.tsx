@@ -1,21 +1,30 @@
 import { tailspin } from 'ldrs'
 import React, { useState } from 'react'
-import { fetchStoryDetails, fetchTopStories } from '../../services/hackerNewsApi'
+import { convertTimestampToTimeAgo, fetchStoryDetails, fetchTopStories } from '../../services/hackerNewsApi'
 import '../../App.css'
 import { useDispatch } from 'react-redux'
 import { setKids } from '../../Redux/dataSlice'
+import { useNavigate } from 'react-router-dom'
+
 tailspin.register()
 
 export default function HomeNews() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [topStories, setTopStories] = useState<any>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [page, setpages] = useState<number>(25)
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleDataChange = (values : any) => {        
+    const handleDataChange = (values: any) => {
+        const w = window.innerWidth
+
         dispatch(setKids(values))
+
+        if (w < 640) {
+            navigate('/comment')
+        }
     }
 
     React.useEffect(() => {
@@ -30,16 +39,18 @@ export default function HomeNews() {
             setLoading(false)
         })()
     }, [page])
-    
+
     return (
-        <div className="py-3 px-1 mt-10 dark:bg-black h-screen overflow-y-scroll" style={{scrollbarWidth : 'thin'}}>
+        <div className="py-3 px-1 mt-10 dark:bg-black h-screen overflow-y-scroll">
             {loading ? (
-                <l-tailspin
-                    size="30"
-                    stroke="5"
-                    speed="0.9"
-                    color="white"
-                ></l-tailspin>
+                <div className='flex h-screen items-center justify-center align-middle'>
+                    <l-tailspin
+                        size="30"
+                        stroke="5"
+                        speed="0.9"
+                        color="white"
+                    ></l-tailspin>
+                </div>
             ) : (
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 topStories.map((story: any, index: number) => (
@@ -48,7 +59,7 @@ export default function HomeNews() {
                             <a className='cursor-pointer overflow-hidden' href={story.url} target='_blank'>
                                 <h2>{story.title}</h2>
                                 <p className='font-thin text-sm dark:text-gray-500'>
-                                    {story.by} <span> 30</span>
+                                    {story.by} <span>{convertTimestampToTimeAgo(story.time)}</span>
                                 </p>
                                 <p className='truncate font-thin text-sm dark:text-gray-500'>{story.url}</p>
                             </a>
@@ -64,7 +75,7 @@ export default function HomeNews() {
                     </React.Fragment>
                 ))
             )}
-            <p className='text-center cursor-pointer' onClick={() => setpages(page + 15)}>Load More</p>
+            <p className='text-center cursor-pointer mb-9' onClick={() => setpages(page + 15)}>Load More</p>
         </div>
     )
 }

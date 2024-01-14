@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
+import Comment from './components/commentSection/Comment';
 import Stories from './pages/Stories';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/stories" element={<Stories />} />
+            <Route path='/comment' element={<Comment />} />
           </Routes>
         </div>
         <div className='col-span-2'>
