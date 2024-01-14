@@ -17,9 +17,7 @@ export const dataSlice = createSlice({
     setData: (state, action: PayloadAction<number>) => {
       state.data = action.payload;
     },
-    setKids: (state, action: PayloadAction<number[]>) => {      
-      console.log(action.payload);
-      
+    setKids: (state, action: PayloadAction<number[]>) => {            
       state.kids = action.payload;
     },
   },

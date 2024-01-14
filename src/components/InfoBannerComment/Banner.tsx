@@ -1,9 +1,16 @@
 import { convertTimestampToTimeAgo } from "../../services/hackerNewsApi";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Banner({ bannerInfo }: any) {
-    console.log(bannerInfo);
+interface BannerInfo {
+    title: string
+    score: number
+    time: number
+    descendants: string
+    url: string
+    by: string
+}
 
+const Banner: React.FC<{ bannerInfo: BannerInfo }> = ({ bannerInfo }) => {
+  document.title = 'Comments'
     return (
         <div className="bg-orange-900 p-3">
             <div className="text-white">
@@ -31,3 +38,5 @@ export default function Banner({ bannerInfo }: any) {
         </div>
     )
 }
+
+export default Banner

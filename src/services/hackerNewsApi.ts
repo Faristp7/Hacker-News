@@ -29,6 +29,7 @@ export async function fetchComments(commentIds: number[]) {
       return response.data;
     });
     const comments = await Promise.all(commentPromises);
+    
     return comments;
   } catch (error) {
     console.error("Error fetching comments", error);
