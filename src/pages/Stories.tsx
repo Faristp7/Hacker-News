@@ -3,7 +3,7 @@ import Comment from "../components/commentSection/Comment";
 
 export default function Stories() {
   return (
-    <div className='hidden sm:block ' >
+    <div className='hidden sm:block'>
       <div className="relative overflow-y-auto">
         <NavBar />
       </div>
