@@ -13,7 +13,7 @@ export default function SideBar() {
         <div>
           <NavBar />
         </div>
-        <div className="fixed mt-11 flex w-2/6 justify-between bg-clr align-middle font-thin">
+        <div className="fixed mt-11 flex w-full sm:w-2/6 justify-between bg-orange-900 align-middle font-thin">
           <div
             className={`flex flex-1 cursor-pointer justify-center py-2 ${tabs === 0 ? "border-b-2 border-gray-400" : ""}`}
             onClick={() => setTabs(0)}
