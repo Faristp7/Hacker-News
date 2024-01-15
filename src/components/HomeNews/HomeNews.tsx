@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 tailspin.register()
 
 export default function HomeNews() {
+    document.title = 'Home'
     const navigate = useNavigate()
     const dispatch = useDispatch()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
