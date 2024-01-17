@@ -11,7 +11,7 @@ export default function DotMenu() {
     ];
 
     const handleToggleNightMode = () => {        
-        setIsNightMode(!isNightMode)
+        setIsNightMode(!isNightMode)    
         if (isNightMode) {
             document.documentElement.classList.remove('dark')
         } else {
